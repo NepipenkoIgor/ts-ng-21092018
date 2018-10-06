@@ -211,6 +211,7 @@ class MathLib {
         return Math.PI * r ** 2;
     }
 }
+
 // tslint:disable-next-line
 function logMethod(_target: any, key: string, descriptor: PropertyDescriptor): PropertyDescriptor {
     const originalDesc = descriptor.value;

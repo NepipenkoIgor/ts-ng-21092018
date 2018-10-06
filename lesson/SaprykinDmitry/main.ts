@@ -5,7 +5,7 @@ type ns  = string | number;
  * Возвращает true, если все аргументы, кроме первого входят в первый.
  * Первым всегда должен быть массив.
  */
-function isInArray(arr: number[], ...args: number[]): boolean {
+export function isInArray(arr: number[], ...args: number[]): boolean {
     let res: boolean = true;
 
     args.forEach((arg: number) => {
@@ -26,7 +26,7 @@ console.log(isInArray([1, 2, 3], 1, 2, 3, 4, 5)); //false
  * Написать функцию summator(), которая суммирует переданые ей аргументы.
  * Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
  */
-function summator(...args: (number | string)[]): number {
+export function summator(...args: (number | string)[]): number {
     let res: number = 0;
 
     args.forEach((arg: number | string) => {
@@ -54,7 +54,7 @@ console.log(summator(1, 2, "t3", "4")); //7
  * Порядок элементов результирующего массива должен совпадать с порядком,
  * в котором они встречаются в оригинальной структуре.
  */
-function getUnique(...args: ns[]): ns[] {
+export function getUnique(...args: ns[]): ns[] {
     const res: ns[] = [];
 
     args.forEach((arg: number | string) => {
@@ -77,7 +77,7 @@ console.log(getUnique("1", 2, "n", 4, "1", 5)); //['1', 2, 'n', 4, 5]
  * элементы подмассивов беруться из массива data.
  * Оригинальный массив не должен быть изменен.
  */
-function toMatrix(data: ns[], rowSize: number): ns[][] {
+export function toMatrix(data: ns[], rowSize: number): ns[][] {
     const res: ns[][] = [];
     let tmp: ns[] = [];
     data.forEach((el: ns) => {

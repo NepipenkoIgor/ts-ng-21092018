@@ -1,4 +1,4 @@
-function toMatrix<T>(data: T[], rowSize: number): T[][] {
+export function toMatrix<T>(data: T[], rowSize: number): T[][] {
     const result = [];
     const l = data.length;
 
@@ -16,5 +16,3 @@ function toMatrix<T>(data: T[], rowSize: number): T[][] {
 
     return result;
 }
-
-toMatrix<number>([1, 2, 3], 3);

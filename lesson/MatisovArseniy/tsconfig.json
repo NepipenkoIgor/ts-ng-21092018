@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["es2015", "es2016", "dom"]
+    "strict": true,
+    "lib": ["es6", "dom"],
+    "downlevelIteration": true,
+    "target": "es5"
   },
   "include": ["./homework.ts", "./homework.spec.ts"]
 }

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tslint.json",
+  "jsRules": {
+    "class-name": true,
+    "no-console": [
+      false
+    ]
+  },
+  "rules": {
+    "no-console": [
+      false
+    ]
+  }
+}

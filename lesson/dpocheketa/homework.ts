@@ -1,6 +1,6 @@
 type StringOrNumber = string | number;
 
-function isInArray (source: StringOrNumber[], ...values: StringOrNumber[]): boolean {
+export function isInArray (source: StringOrNumber[], ...values: StringOrNumber[]): boolean {
     return values.every((value) => {
         return source.indexOf(value) >= 0;
     });
@@ -9,7 +9,7 @@ function isInArray (source: StringOrNumber[], ...values: StringOrNumber[]): bool
 const arr = [1, 2, 3, 4, 5];
 isInArray(arr, 1, 2, 3);
 
-function summator (...values: StringOrNumber[]): StringOrNumber {
+export function summator (...values: StringOrNumber[]): StringOrNumber {
     let initialValue: StringOrNumber;
 
     if (typeof values[0] === 'string') {
@@ -33,7 +33,7 @@ function add(a: StringOrNumber, b: StringOrNumber): StringOrNumber {
     }
 }
 
-function getUnique<T, S>(...args: (T|S)[]): (T|S)[] {
+export function getUnique<T, S>(...args: (T|S)[]): (T|S)[] {
     const result: (T|S)[] = [];
 
     for (let i = 0; i < args.length; i++) {
@@ -47,7 +47,8 @@ function getUnique<T, S>(...args: (T|S)[]): (T|S)[] {
 
 getUnique(1, 2, 3, '3', 5);
 
-function toMatrix<T, S>(data: (T|S)[], rowSize: number): (T|S)[][] {
+// @todo change implementation and write tests
+export function toMatrix<T, S>(data: (T|S)[], rowSize: number): (T|S)[][] {
     const result: (T[]|S[])[] = [];
 
     for (let i = 0; i < data.length; i++) {

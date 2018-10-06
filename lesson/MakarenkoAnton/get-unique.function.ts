@@ -1,18 +1,16 @@
-// QUESTION: the ALMOSTANY type is defined in a different function/file. Not gonna work without main.ts - is this OK?
+import { isInArray } from './is-in-array.function';
 
-function getUnique(arr: ALMOSTANY[], ...moreArrays: ALMOSTANY[]): ALMOSTANY[] {
-    const result: ALMOSTANY[] = [];
-    let fullList: ALMOSTANY[] = [].concat(arr);
-
-    for (const nextArr of moreArrays) {
-        fullList = fullList.concat(nextArr);
+export function getUnique<T>(first: T[], ... moreArrays: T[][]): T[] {
+    const result: T[] = [];
+    let all: T[] = [];
+    all = all.concat(first);
+    for (const arr of moreArrays) {
+        all = all.concat(arr);
     }
-
-    for (const el of fullList) {
+    for (const el of all) {
         if (!isInArray(result, el)) {
             result.push(el);
         }
     }
-
     return result;
 }

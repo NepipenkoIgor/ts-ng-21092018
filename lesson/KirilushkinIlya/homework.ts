@@ -1,5 +1,5 @@
 ///// HW1
-function isInArray<T>(array: T[], ...values: T[]): boolean {
+export function isInArray<T>(array: T[], ...values: T[]): boolean {
   return !values.some((elem: T) => {
     return (
       array.findIndex((cur: T) => {
@@ -10,26 +10,16 @@ function isInArray<T>(array: T[], ...values: T[]): boolean {
 }
 
 ///// HW2
-function summator(...values: (string | number)[]): number {
-  function isNumber(element: string | number) {
-    return typeof element === 'number';
-  }
-  let result = 0;
-  values.forEach((elem: string | number) => {
-    if (isNumber(elem)) {
-      result += +elem;
-    } else {
-      const val = Number(elem);
-      if (!isNaN(val)) {
-        result += val;
-      }
-    }
-  });
-  return result;
+type SN = string | number;
+export function summator(...values: SN[]): number {
+  return values.reduce((prev: number, curr): number => {
+    const val = Number(curr);
+    return !isNaN(val) ? prev + val : prev;
+  }, 0);
 }
 
 ///// HW3
-function getUnique<T>(array: T[]): T[] {
+export function getUnique<T>(array: T[]): T[] {
   const unique: T[] = [];
   array.forEach(elem => {
     if (unique.indexOf(elem) < 0) {
@@ -40,7 +30,7 @@ function getUnique<T>(array: T[]): T[] {
 }
 
 ///// HW4
-function toMatrix<T>(array: T[], size: number): T[][] {
+export function toMatrix<T>(array: T[], size: number): T[][] {
   const result: T[][] = [];
   const length = array.length;
   let index = 0;

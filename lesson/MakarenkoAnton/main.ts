@@ -1,29 +1,29 @@
-// QUESTION: I don't know how to run this. Syntactically seems correct, but unable to execute via node
-import './is-in-array.function';
-import './summator.function';
-import './get-unique.function';
-import './to-matrix.function';
+import { isInArray } from './is-in-array.function';
+import { summator } from './summator.function';
+import { getUnique } from './get-unique.function';
+import { toMatrix } from './to-matrix.function';
 
-// QUESTION: what is the proper way to execute this, since console.log() is not recommended?
-
+console.log('isInArray()');
 // isInArray([]); // not gonna work, missing mandatory 2nd parameter
-isInArray([], 1);
-isInArray([], 1, 2);
-isInArray(['foo', 'bar'], 'foo');
+console.log(isInArray([], 1));
+console.log(isInArray<number>([], 1, 2)); // empty array is implicitly any[]?
+console.log(isInArray(['foo', 'bar'], 'foo'));
 
+console.log('summator()');
 // summator(); // not allowed, must have at least 1
 // summator(1, 'foo', 'bar'); // not allowed, must have all either number or all string
-summator(1, 2, 3);
-summator('foo', 'bar', 'baz');
+console.log(summator(1, 2, 3));
+console.log(summator('foo', 'bar', 'baz'));
 
+console.log('getUnique()');
 // getUnique(); // not allowed, must have at least 1
-getUnique([1, 2, 3], [1, 3, 5], [8, 13]); // [1, 2, 3, 5, 8, 13]
-const a = {};
-const b = {};
-const c = {};
-getUnique([a, b], [b, c]); // [a, b, c]
+console.log(getUnique([1, 2, 3], [1, 3, 5], [8, 13])); // [1, 2, 3, 5, 8, 13]
+const a = {_: 1};
+const b = {_: 2};
+const c = {_: 3};
+console.log(getUnique([a, b], [b, c])); // [a, b, c]
 
-
+console.log('toMatrix()');
 // toMatrix(); // nope
 // toMatrix([1, 2, 3]); // nope
-toMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 3); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11]]
+console.log(toMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11]]
