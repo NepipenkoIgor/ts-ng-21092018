@@ -18,17 +18,19 @@ console.log(isInArray([1, 'hoh', 3, 4, 5, 6], 2, 3, 4));
   Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено.
 */
 
-function isNumber(a: string | number): a is number {
+type sn = string | number;
+
+function isNumber(a: sn): a is number {
     return typeof a !== 'string';
 }
 
-export function summator(...args: (string | number)[]): number {
-    return args.reduce<number>((acc: number, next: string | number) => {
+export function summator(...args: sn[]): number {
+    return args.reduce<number>((acc: number, next: sn) => {
         if (isNumber(next)) {
             return acc += next;
         } else {
-            if (!isNaN(parseInt(next))) {
-                return acc += parseInt(next);
+            if (!isNaN(Number(next))) {
+                return acc += Number(next);
             } else {
                 return acc;
             }
@@ -50,9 +52,9 @@ console.log(summator(1, 'hoh', 2, '3'));
   в котором они встречаются в оригинальной структуре.
 */
 
-export function getUnique(...arr: (string | number)[]): (string | number)[] {
-    const result: (string | number)[] = [];
-    arr.forEach((el: string | number) => {
+export function getUnique(...arr: sn[]): sn[] {
+    const result: sn[] = [];
+    arr.forEach((el: sn) => {
         if (result.indexOf(el) === -1) {
             result.push(el);
         }

@@ -12,11 +12,11 @@ module.exports = (config) => {
     singleRun: "true",
     logLevel: config.LOG_DEBUG,
     karmaTypescriptConfig: {
-      tsconfig: ".tsconfig.json",
+      tsconfig: "./tsconfig.json",
       reports: {
         "html": "coverage",
         "text-summary": ""
       }
     }
-  })
-}
+  });
+};
