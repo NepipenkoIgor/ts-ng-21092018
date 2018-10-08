@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint 'lesson/**/*.ts'",
+    "lint": "tslint 'lesson/**/*.ts' --exclude '**/node_modules/**/*.ts'",
     "ts-node": "ts-node"
   },
   "keywords": [],
