@@ -26,5 +26,7 @@
   "pre-commit": [
     "lint"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  }
 }

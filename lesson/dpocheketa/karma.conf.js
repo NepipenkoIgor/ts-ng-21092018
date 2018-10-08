@@ -2,15 +2,15 @@ module.exports = (config) => {
   config.set({
     frameworks: ["jasmine", "karma-typescript"],
     files: [
-      "./homework.spec.ts"
+      "**/*.ts"
     ],
     preprocessors: {
       "**/*.ts": ["karma-typescript"]
     },
     reporters: ["progress", "karma-typescript"],
-    browsers: ["Chrome"],
+    browsers: ["ChromeHeadless"],
     singleRun: "true",
-    logLevel: config.LOG_DEBUG,
+    //logLevel: config.LOG_DEBUG,
     karmaTypescriptConfig: {
       tsconfig: "./tsconfig.json",
       reports: {

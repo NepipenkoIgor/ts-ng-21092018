@@ -1,7 +1,13 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "lib": ["es6"]
-    },
-    "include": ["./homework.ts", "./homework.spec.ts"]
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "es6"
+    ],
+    "sourceMap": true
+  },
+  "include": [
+    "./homework.ts",
+    "./homework.spec.ts"
+  ]
 }
