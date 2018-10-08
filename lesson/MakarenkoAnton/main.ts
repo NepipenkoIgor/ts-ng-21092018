@@ -1,7 +1,7 @@
-import { isInArray } from './is-in-array.function';
-import { summator } from './summator.function';
-import { getUnique } from './get-unique.function';
-import { toMatrix } from './to-matrix.function';
+import { isInArray } from './src/is-in-array.function';
+import { summator } from './src/summator.function';
+import { getUnique } from './src/get-unique.function';
+import { toMatrix } from './src/to-matrix.function';
 
 console.log('isInArray()');
 // isInArray([]); // not gonna work, missing mandatory 2nd parameter
