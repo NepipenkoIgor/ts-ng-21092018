@@ -1,22 +1,22 @@
 type snb = string | number | boolean;
 
-function isInArray(array: ReadonlyArray<snb>, ...rest: snb[]): boolean {
+export function isInArray(array: ReadonlyArray<snb>, ...rest: snb[]): boolean {
     return rest.every(el => array.includes(el));
 }
 
-function summator(...rest: snb[]): number {
+export function summator(...rest: snb[]): number {
     return rest
         .filter(el => !Number.isNaN(Number(el)))
         .map(el => Number(el))
         .reduce((previousValue: number, currentValue: number) => previousValue + currentValue);
 }
 
-function getUnique(...rest: snb[]): snb[] {
+export function getUnique(...rest: snb[]): snb[] {
     const unique = new Set(rest);
     return [...unique];
 }
 
-function toMatrix(arrayData: ReadonlyArray<snb>, rowSize: number): snb[][] {
+export function toMatrix(arrayData: ReadonlyArray<snb>, rowSize: number): snb[][] {
     const res: snb[][] = [];
     const chunk: number = (arrayData.length - arrayData.length % rowSize) / rowSize;
     let counter: number = 0;
