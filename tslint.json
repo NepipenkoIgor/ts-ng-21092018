@@ -3,7 +3,6 @@
     "class-name": true,
     "no-console": [
       true,
-      "log",
       "debug",
       "info",
       "time",
@@ -22,7 +21,7 @@
     ],
     "max-classes-per-file": [
       true,
-      1
+      2
     ],
     "max-file-line-count": [
       true,
@@ -40,7 +39,7 @@
     "prefer-const": true,
     "array-type": [
       true,
-      "array"
+      "array-simple"
     ],
     "no-conditional-assignment": true,
     "curly": true,
@@ -177,7 +176,7 @@
     ],
     "max-classes-per-file": [
       true,
-      1
+      2
     ],
     "max-file-line-count": [
       true,

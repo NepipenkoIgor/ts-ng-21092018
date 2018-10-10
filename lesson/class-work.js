@@ -1,9 +1,29 @@
+"use strict";
 // interface IAccount {
 //     firstName: string;
 //     age: number;
 // }
 // let person = IAccount;
-
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 // let account = {
 //     firsName: 'Igor',
 //     age: 32,
@@ -11,21 +31,18 @@
 //
 // let person: typeof account;
 // person = 1;
-
 // class Account {
 //
 // }
 //
 // let p1 = Account;
 // let p2: Account;
-
 // let a: string;
 // let b: number | null = 1;
 // b = null;
 // let c = true;
 // c = 1;
 // console.log(b + 2)
-
 // let a: void = undefined;
 //
 // function desc(): void {
@@ -69,7 +86,6 @@
 // let p1: Info<{ name: string, age: number }>;
 // let p2: Info<{ name: string, age: number, info: string }>;
 // let p3: Info<{ name: string, age: number, female: boolean }>;
-
 // let account1: IACCOUNT = {
 //     info: {
 //         action: 'action'
@@ -86,17 +102,13 @@
 //         action: 'up'
 //     };
 // }
-
 // account.info.action = 'new action';
 //
 // let emails: ReadonlyArray<string> = ['s', 'd'];
 // emails.push('asd');
 // emails[100] = 'ads';
-
 // let tuple: [string, number] = ['sd', 1, 1];
-
 // let cb: new (a: string) => number;
-
 // let action: 'up' | 'down';
 // action = 'up';
 //
@@ -104,7 +116,6 @@
 //     a: 4,
 //     b: 5
 // };
-
 // function average(...a: [number, number, number]): string {
 //     const [c, b, d] = a;
 //     const total = c + b + d;
@@ -166,7 +177,6 @@
 //         return super.sum() + 1;
 //     }
 // }
-
 // class Singleton {
 //     private static instance: Singleton;
 //
@@ -185,7 +195,6 @@
 // const ins1 = Singleton.getInstance();
 // const ins2 = Singleton.getInstance();
 // const ins3 = Singleton.getInstance();
-
 // abstract class AbstractPoint {
 //     public x: number = 0;
 //     public abstract y: number;
@@ -204,34 +213,41 @@
 //         return 2;
 //     }
 // }
-
-class MathLib {
-    @logMethod
-    public areaOfCircle(r: number): number {
-        return Math.PI * r ** 2;
+var MathLib = /** @class */ (function () {
+    function MathLib() {
     }
-}
-
-// tslint:disable-next-line
-function logMethod(_target: any, key: string, descriptor: PropertyDescriptor): PropertyDescriptor {
-    const originalDesc = descriptor.value;
-    return {
-        ...descriptor,
-        // tslint:disable-next-line
-        value: (...args: any[]) => {
-            // tslint:disable-next-line
-            const b = args.map((v: any) => JSON.stringify(v))
-                .join();
-            const result = originalDesc(args);
-            const r = JSON.stringify(result);
-            // tslint:disable-next-line
-            console.log(`Call: ${key}(${b})=>${r}`);
-            return result;
-        }
+    MathLib.prototype.areaOfCircle = function (r) {
+        return Math.PI * Math.pow(r, 2);
     };
+    __decorate([
+        logMethod,
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Number]),
+        __metadata("design:returntype", Number)
+    ], MathLib.prototype, "areaOfCircle", null);
+    return MathLib;
+}());
+// tslint:disable-next-line
+function logMethod(_target, key, descriptor) {
+    var originalDesc = descriptor.value;
+    return __assign({}, descriptor, { 
+        // tslint:disable-next-line
+        value: function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            // tslint:disable-next-line
+            var b = args.map(function (v) { return JSON.stringify(v); })
+                .join();
+            var result = originalDesc(args);
+            var r = JSON.stringify(result);
+            // tslint:disable-next-line
+            console.log("Call: " + key + "(" + b + ")=>" + r);
+            return result;
+        } });
 }
-
-let m = new MathLib();
+var m = new MathLib();
 m.areaOfCircle(100);
 m.areaOfCircle(2);
 m.areaOfCircle(55);
