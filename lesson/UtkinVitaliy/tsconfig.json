@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2016"],
+    "downlevelIteration": true,
+    "sourceMap": true
+  },
+  "include": ["./main.ts", "./main.spec.ts"]
+}
