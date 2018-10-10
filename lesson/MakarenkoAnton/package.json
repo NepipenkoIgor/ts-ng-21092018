@@ -1,25 +1,23 @@
 {
-  "name": "ts-ng-21092018",
+  "name": "makarenkoanton",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint 'lesson/**/*.ts' --exclude '**/node_modules/**/*.ts'",
-    "ts-node": "ts-node"
+    "lint": "tslint '*.ts'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jasmine": "^2.8.9",
-    "@types/node": "^10.11.3",
     "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "^3.2.1",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
     "karma-typescript": "^3.0.13",
-    "pre-commit": "^1.2.2",
     "ts-loader": "^5.2.1",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
@@ -30,8 +28,5 @@
   },
   "pre-commit": [
     "lint"
-  ],
-  "dependencies": {
-    "rxjs": "^6.3.3"
-  }
+  ]
 }
