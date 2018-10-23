@@ -4,7 +4,7 @@
     Первым всегда должен быть массив.
  */
 
-function isInArray<T>(arr: T[], ...args: T[]): boolean {
+export function isInArray<T>(arr: T[], ...args: T[]): boolean {
     let flag: boolean = true;
     args.forEach((arg: T) => {
         if (arr.indexOf(arg) === -1 ) {
@@ -22,7 +22,7 @@ console.log('1. Результат - ' + isInArray([1, 2, 3], 1, 2));
     Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
  */
 
-function summator<T, S>(...args: (T|S)[]): number {
+export function summator<T, S>(...args: (T|S)[]): number {
     let output: number = 0;
 
     args.forEach((arg: T|S) => {
@@ -52,7 +52,7 @@ console.log('2. Результат - ' + summator(1, 1, 1, '3', 3));
  */
 
 
-function getUnique<T, S>(...args: (T|S)[]): (T|S)[] {
+export function getUnique<T, S>(...args: (T|S)[]): (T|S)[] {
     const output: (T|S)[] = [];
 
     args.forEach((arg: T|S) => {

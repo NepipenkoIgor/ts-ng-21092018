@@ -1,7 +1,7 @@
 import { interval, of } from 'rxjs';
 import { mergeMap, take, tap } from 'rxjs/operators';
 
-//const sequence$: Observable<number> = from([1, 2, 3, 4, 5]);
+// const sequence$: Observable<number> = from([1, 2, 3, 4, 5]);
 
 // class DoubleSubscriber extends Subscriber<number> {
 //     public _next(value: number) {
@@ -57,13 +57,15 @@ const sequence$ = interval(1000)
 
 const hightOrderObservable = sequence$.pipe(
     tap((x) => {
+        // tslint:disable-next-line
         console.log(`X=> ${x}`);
         return x * 3;
     }),
     mergeMap((_x: number) => {
+        // tslint:disable-next-line
         console.log(`_x=> ${_x}`);
         return of(1, 2);
     }),
 );
-
+// tslint:disable-next-line
 hightOrderObservable.subscribe((x) => console.log(x));
