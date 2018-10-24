@@ -4,7 +4,7 @@
   Первым всегда должен быть массив.
 */
 
-function isInArray<T>(arr: T[], ...args: T[]): boolean {
+export function isInArray<T>(arr: T[], ...args: T[]): boolean {
    return args.every((el: T) => arr.indexOf(el) !== -1);
 }
 
@@ -14,15 +14,15 @@ console.log(isInArray([1, 2, 3, 4, 5, 6], 2, 3, 4));
 console.log(isInArray([1, 'hoh', 3, 4, 5, 6], 2, 3, 4));
 
 /*2)
- Написать функцию summator(), которая суммирует переданые ей аргументы.
- Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено.
+  Написать функцию summator(), которая суммирует переданые ей аргументы.
+  Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено.
 */
 
 function isNumber(a: string | number): a is number {
     return typeof a !== 'string';
 }
 
-function summator(...args: (string | number)[]): number {
+export function summator(...args: (string | number)[]): number {
     return args.reduce<number>((acc: number, next: string | number) => {
         if (isNumber(next)) {
             return acc += next;
@@ -50,7 +50,7 @@ console.log(summator(1, 'hoh', 2, '3'));
   в котором они встречаются в оригинальной структуре.
 */
 
-function getUnique(...arr: (string | number)[]): (string | number)[] {
+export function getUnique(...arr: (string | number)[]): (string | number)[] {
     const result: (string | number)[] = [];
     arr.forEach((el: string | number) => {
         if (result.indexOf(el) === -1) {
@@ -64,18 +64,18 @@ function getUnique(...arr: (string | number)[]): (string | number)[] {
 console.log(getUnique(1, 2, 3, 3, 'four', 5, 'four', 6, 'six', 6));
 
 /*4)
- Написать функцию toMatrix(data, rowSize), которая принимает аргументом массив и число,
- возвращает новый массив. Число показывает количество элементов в подмассивах,
- элементы подмассивов берутся из массива data. Оригинальный массив не должен быть изменен.
- */
+  Написать функцию toMatrix(data, rowSize), которая принимает аргументом массив и число,
+  возвращает новый массив. Число показывает количество элементов в подмассивах,
+  элементы подмассивов берутся из массива data. Оригинальный массив не должен быть изменен.
+*/
 
- function toMatrix<T>(data: T[], rowSize: number): T[][] {
-     const matrix: T[][] = [];
-     for (let i = 0; i < data.length; i += rowSize) {
+export function toMatrix<T>(data: T[], rowSize: number): T[][] {
+    const matrix: T[][] = [];
+    for (let i = 0; i < data.length; i += rowSize) {
         const row: T[] = data.slice(i, i + rowSize);
         matrix.push(row);
     }
-     return matrix;
+    return matrix;
 }
 
 // tslint:disable-next-line
